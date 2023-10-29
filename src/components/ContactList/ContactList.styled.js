@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const List = styled.ul`
+export const PeopleList = styled.ul`
   list-style: none;
   padding: 0;
 `;

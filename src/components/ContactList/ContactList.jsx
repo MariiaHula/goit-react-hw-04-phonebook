@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { List, Item, Text, Button } from './ContactList.styled';
+import { PeopleList, Item, Text, Button } from './ContactList.styled';
 
 const ContactList = ({ list, onDeleteContact }) => {
   return (
-    <List>
+    <PeopleList>
       {list.map(contact => (
         <Item key={contact.id}>
           <Text>
@@ -13,7 +13,7 @@ const ContactList = ({ list, onDeleteContact }) => {
           <Button onClick={() => onDeleteContact(contact.id)}>Delete</Button>
         </Item>
       ))}
-    </List>
+    </PeopleList>
   );
 };
 
