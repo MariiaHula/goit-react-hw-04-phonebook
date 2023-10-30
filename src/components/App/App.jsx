@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-// import contactData from '../../../src/contactData.json';
 import { nanoid } from 'nanoid';
 import ContactForm from '../ContactForm/ContactForm';
 import Filter from '../Filter/Filter';
@@ -16,13 +15,6 @@ export const App = () => {
 
   const [filter, setFilter] = useState('');
   const [prevContacts, setPrevContacts] = useState([]);
-
-  // useEffect(() => {
-  //   const contacts = JSON.parse(window.localStorage.getItem('contacts'));
-  //   if (contacts?.length) {
-  //     setContacts(contacts);
-  //   }
-  // }, []);
 
   useEffect(() => {
     if (prevContacts !== contacts) {
