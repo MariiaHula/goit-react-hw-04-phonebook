@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import contactData from '../../../src/contactData.json';
+// import contactData from '../../../src/contactData.json';
 import { nanoid } from 'nanoid';
 import ContactForm from '../ContactForm/ContactForm';
 import Filter from '../Filter/Filter';
@@ -10,16 +10,19 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export const App = () => {
-  const [contacts, setContacts] = useState(contactData);
+  const [contacts, setContacts] = useState(
+    () => JSON.parse(window.localStorage.getItem('contacts')) ?? []
+  );
+
   const [filter, setFilter] = useState('');
   const [prevContacts, setPrevContacts] = useState([]);
 
-  useEffect(() => {
-    const contacts = JSON.parse(window.localStorage.getItem('contacts'));
-    if (contacts?.length) {
-      setContacts(contacts);
-    }
-  }, []);
+  // useEffect(() => {
+  //   const contacts = JSON.parse(window.localStorage.getItem('contacts'));
+  //   if (contacts?.length) {
+  //     setContacts(contacts);
+  //   }
+  // }, []);
 
   useEffect(() => {
     if (prevContacts !== contacts) {
